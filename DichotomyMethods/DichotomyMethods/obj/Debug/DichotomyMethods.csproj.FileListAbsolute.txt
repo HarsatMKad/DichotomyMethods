@@ -1,0 +1,9 @@
+D:\Users\UPGRADE\source\repos\DichotomyMethods\DichotomyMethods\bin\Debug\DichotomyMethods.exe.config
+D:\Users\UPGRADE\source\repos\DichotomyMethods\DichotomyMethods\bin\Debug\DichotomyMethods.exe
+D:\Users\UPGRADE\source\repos\DichotomyMethods\DichotomyMethods\bin\Debug\DichotomyMethods.pdb
+D:\Users\UPGRADE\source\repos\DichotomyMethods\DichotomyMethods\obj\Debug\DichotomyMethods.csproj.AssemblyReference.cache
+D:\Users\UPGRADE\source\repos\DichotomyMethods\DichotomyMethods\obj\Debug\DichotomyMethods.MainForm.resources
+D:\Users\UPGRADE\source\repos\DichotomyMethods\DichotomyMethods\obj\Debug\DichotomyMethods.csproj.GenerateResource.cache
+D:\Users\UPGRADE\source\repos\DichotomyMethods\DichotomyMethods\obj\Debug\DichotomyMethods.csproj.CoreCompileInputs.cache
+D:\Users\UPGRADE\source\repos\DichotomyMethods\DichotomyMethods\obj\Debug\DichotomyMethods.exe
+D:\Users\UPGRADE\source\repos\DichotomyMethods\DichotomyMethods\obj\Debug\DichotomyMethods.pdb
