@@ -7,3 +7,12 @@ D:\Users\UPGRADE\source\repos\DichotomyMethods\DichotomyMethods\obj\Debug\Dichot
 D:\Users\UPGRADE\source\repos\DichotomyMethods\DichotomyMethods\obj\Debug\DichotomyMethods.csproj.CoreCompileInputs.cache
 D:\Users\UPGRADE\source\repos\DichotomyMethods\DichotomyMethods\obj\Debug\DichotomyMethods.exe
 D:\Users\UPGRADE\source\repos\DichotomyMethods\DichotomyMethods\obj\Debug\DichotomyMethods.pdb
+C:\Users\Harsat\source\repos\DichotomyMethods\DichotomyMethods\DichotomyMethods\bin\Debug\DichotomyMethods.exe.config
+C:\Users\Harsat\source\repos\DichotomyMethods\DichotomyMethods\DichotomyMethods\bin\Debug\DichotomyMethods.exe
+C:\Users\Harsat\source\repos\DichotomyMethods\DichotomyMethods\DichotomyMethods\bin\Debug\DichotomyMethods.pdb
+C:\Users\Harsat\source\repos\DichotomyMethods\DichotomyMethods\DichotomyMethods\obj\Debug\DichotomyMethods.csproj.AssemblyReference.cache
+C:\Users\Harsat\source\repos\DichotomyMethods\DichotomyMethods\DichotomyMethods\obj\Debug\DichotomyMethods.MainForm.resources
+C:\Users\Harsat\source\repos\DichotomyMethods\DichotomyMethods\DichotomyMethods\obj\Debug\DichotomyMethods.csproj.GenerateResource.cache
+C:\Users\Harsat\source\repos\DichotomyMethods\DichotomyMethods\DichotomyMethods\obj\Debug\DichotomyMethods.csproj.CoreCompileInputs.cache
+C:\Users\Harsat\source\repos\DichotomyMethods\DichotomyMethods\DichotomyMethods\obj\Debug\DichotomyMethods.exe
+C:\Users\Harsat\source\repos\DichotomyMethods\DichotomyMethods\DichotomyMethods\obj\Debug\DichotomyMethods.pdb

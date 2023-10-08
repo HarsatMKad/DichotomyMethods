@@ -29,8 +29,8 @@ namespace DichotomyMethods
     /// </summary>
     private void InitializeComponent()
     {
-      System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-      System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+      System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+      System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
       this.menuStrip1 = new System.Windows.Forms.MenuStrip();
       this.рассчитатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.textBox1 = new System.Windows.Forms.TextBox();
@@ -176,15 +176,15 @@ namespace DichotomyMethods
       // 
       // chart1
       // 
-      chartArea5.Name = "ChartArea1";
-      this.chart1.ChartAreas.Add(chartArea5);
+      chartArea1.Name = "ChartArea1";
+      this.chart1.ChartAreas.Add(chartArea1);
       this.chart1.Location = new System.Drawing.Point(334, 55);
       this.chart1.Name = "chart1";
-      series5.BorderWidth = 3;
-      series5.ChartArea = "ChartArea1";
-      series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-      series5.Name = "Series1";
-      this.chart1.Series.Add(series5);
+      series1.BorderWidth = 3;
+      series1.ChartArea = "ChartArea1";
+      series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+      series1.Name = "Series1";
+      this.chart1.Series.Add(series1);
       this.chart1.Size = new System.Drawing.Size(645, 465);
       this.chart1.TabIndex = 4;
       this.chart1.Text = "chart1";
@@ -278,6 +278,7 @@ namespace DichotomyMethods
       this.MainMenuStrip = this.menuStrip1;
       this.Name = "MainForm";
       this.Text = "MainForm";
+      this.Load += new System.EventHandler(this.MainForm_Load);
       this.menuStrip1.ResumeLayout(false);
       this.menuStrip1.PerformLayout();
       this.panel1.ResumeLayout(false);

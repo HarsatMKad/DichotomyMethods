@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,54 +28,153 @@ namespace DichotomyMethods
 
     private void FindTheMinimum()
     {
-      double Start = RestrictionStart;
-      double End = RestrictionEnd;
-      double Midpoint;
+      double xStart = RestrictionStart;
+      double xEnd = RestrictionEnd;
+      double RestStart = RestrictionStart;
+      double RestEnd = RestrictionEnd;
 
-      while (End - Start > Precision)
+      double xMin = Function(RestrictionStart);
+      double RestrMin = Function(RestrictionStart);
+
+      while (xEnd - xStart > Precision)
       {
-        Midpoint = (End + Start) / 2.0;
+        double Midpoint = (xEnd + xStart) / 2.0;
+        double yX1 = Function(Midpoint - Precision);
+        double yX2 = Function(Midpoint + Precision);
 
-        double yA = Function(Start);
-        double yX = Function(Midpoint);
-        double yB = Function(End);
-
-        if (yA < yX)
+        if (yX1 < yX2)
         {
-          End = Midpoint;
+          xEnd = Midpoint;
         }
         else
         {
-          Start = Midpoint;
+          xStart = Midpoint;
         }
-        textBox5.Text = Midpoint.ToString();
+        xMin = Midpoint;
+      }
+
+      while (RestEnd - RestStart > Precision)
+      {
+        double Midpoint = (RestEnd + RestStart) / 2.0;
+        double A = Function(RestStart + Precision);
+        double B = Function(RestEnd - Precision);
+
+        if (A < B)
+        {
+          RestEnd = Midpoint;
+        }
+        else
+        {
+          RestStart = Midpoint;
+        }
+        RestrMin = Midpoint;
+      }
+
+      if (Function(xMin) < Function(RestrMin))
+      {
+        textBox5.Text = xMin.ToString();
+      }
+      else
+      {
+        textBox5.Text = RestrMin.ToString();
       }
     }
 
     private void FindTheMaximum()
     {
-      double Start = RestrictionStart;
-      double End = RestrictionEnd;
-      double Midpoint;
+      double xStart = RestrictionStart;
+      double xEnd = RestrictionEnd;
+      double RestStart = RestrictionStart;
+      double RestEnd = RestrictionEnd;
 
-      while (End - Start > Precision)
+      double xMax = Function(RestrictionStart);
+      double RestrMax = Function(RestrictionStart);
+
+      while (xEnd - xStart > Precision)
       {
-        Midpoint = (End + Start) / 2.0;
+        double Midpoint = (xEnd + xStart) / 2.0;
+        double yX1 = Function(Midpoint - Precision);
+        double yX2 = Function(Midpoint + Precision);
 
-        double yA = -1.0 * Function(Start);
-        double yX = -1.0 * Function(Midpoint);
-        double yB = -1.0 * Function(End);
-
-        if (yA < yX)
+        if (yX1 > yX2)
         {
-          End = Midpoint;
+          xEnd = Midpoint;
         }
         else
         {
-          Start = Midpoint;
+          xStart = Midpoint;
         }
-        textBox6.Text = Midpoint.ToString();
+        xMax = Midpoint;
       }
+
+      while (RestEnd - RestStart > Precision)
+      {
+        double Midpoint = (RestEnd + RestStart) / 2.0;
+        double A = Function(RestStart + Precision);
+        double B = Function(RestEnd - Precision);
+
+        if (A > B)
+        {
+          RestEnd = Midpoint;
+        }
+        else
+        {
+          RestStart = Midpoint;
+        }
+        RestrMax = Midpoint;
+      }
+
+      if (Function(xMax) > Function(RestrMax))
+      {
+        textBox6.Text = xMax.ToString();
+      }
+      else
+      {
+        textBox6.Text = RestrMax.ToString();
+      }
+    }
+
+    private void FindIntersectionPoints2()
+    {
+      double Start = RestrictionStart;
+      double End = RestrictionEnd;
+
+      while (Math.Abs(End - Start) > Precision)
+      {
+        double MidPoint = (End + Start) / 2;
+        if (Function(MidPoint) * Function(Start) > 0)
+        {
+          Start = MidPoint;
+        }
+        else
+        {
+          End = MidPoint;
+        }
+      }
+      Console.WriteLine((Start + End) / 2.0);
+    }
+
+    private void FindIntersectionPoints3()
+    {
+      double Start = RestrictionStart;
+      double End = RestrictionEnd;
+      double e = Precision;
+      double MidPoint = (Start + End) / 2;
+
+      while(End - Start > 2 * e)
+      {
+        if(Function(Start) * Function(MidPoint) < 0)
+        {
+          End = MidPoint;
+        }
+        else
+        {
+          Start = MidPoint;
+        }
+        MidPoint = (Start + End) / 2;
+      }
+      Console.WriteLine((Start + End) / 2.0);
+      Console.WriteLine(" ");
     }
 
     private void FindIntersectionPoints()
@@ -112,15 +212,15 @@ namespace DichotomyMethods
       }
       catch
       {
-        MessageBox.Show("Данные введены в неверном формате", "Ошибка", MessageBoxButtons.OK);
+        Exaption ex = new Exaption();
+        ex.showDataEntryError();
       }
-      finally
+      if (Precision <= 0)
       {
-        if(Precision <= 0)
-        {
-          MessageBox.Show("Точность указана неверно", "Ошибка", MessageBoxButtons.OK);
-        }
+        Exaption ex = new Exaption();
+        ex.showPrecisionError();
       }
+
     }
 
     private void label6_Click(object sender, EventArgs e)
@@ -153,6 +253,11 @@ namespace DichotomyMethods
 
     }
 
+    private void MainForm_Load(object sender, EventArgs e)
+    {
+
+    }
+
     private void textBox2_TextChanged(object sender, EventArgs e)
     {
 
@@ -179,10 +284,16 @@ namespace DichotomyMethods
         FindIntersectionPoints();
         FindTheMinimum();
         FindTheMaximum();
+
+        /*
+        FindIntersectionPoints2();
+        FindIntersectionPoints3();
+        */
       }
       else
       {
-        MessageBox.Show("Данные введены в неверном формате", "Ошибка", MessageBoxButtons.OK);
+        Exaption ex = new Exaption();
+        ex.showRestrictionsError();
       }
     }
   }
